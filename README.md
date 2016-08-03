@@ -1,4 +1,7 @@
 # koa-json-schema
+
+[![CircleCI](https://circleci.com/gh/zorro-del-caribe/koa-json-schema.svg?style=svg)](https://circleci.com/gh/zorro-del-caribe/koa-json-schema)
+
 [json schema](http://json-schema.org/) validation middleware for [koajs](http://koajs.com/) using [AJV](https://github.com/epoberezkin/ajv).
 
 ## install
