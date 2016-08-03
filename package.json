@@ -1,0 +1,36 @@
+{
+  "name": "koa-json-schema",
+  "version": "1.0.0",
+  "description": "json schema validator middleware for koajs",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zorro-del-caribe/koa-json-schema.git"
+  },
+  "keywords": [
+    "jsonschema",
+    "validator",
+    "validate",
+    "json",
+    "middleware",
+    "koa",
+    "koajs"
+  ],
+  "author": "Laurent Renard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zorro-del-caribe/koa-json-schema/issues"
+  },
+  "homepage": "https://github.com/zorro-del-caribe/koa-json-schema#readme",
+  "dependencies": {
+    "ajv": "^4.3.0"
+  },
+  "devDependencies": {
+    "koa": "^1.2.1",
+    "supertest": "^2.0.0",
+    "tape": "^4.6.0"
+  }
+}
