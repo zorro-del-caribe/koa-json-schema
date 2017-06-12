@@ -6,12 +6,12 @@ module.exports = function (schema, options = {}) {
   const ajv = new Ajv(options);
   const validate = ajv.compile(schema);
 
-  return function * (next) {
-    const data = Object.assign({}, this.request.query, this.request.body, this.params);
+  return async function (ctx, next) {
+    const data = Object.assign({}, ctx.request.query, ctx.request.body, ctx.params);
     const isValid = validate(data);
     if (!isValid) {
-      this.throw(422, 'invalid inputs', {error_description: validate.errors});
+      ctx.throw(422, 'invalid inputs', {error_description: validate.errors});
     }
-    yield *next;
+    await next();
   }
 };

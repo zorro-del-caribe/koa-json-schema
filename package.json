@@ -29,7 +29,7 @@
     "ajv": "^4.3.0"
   },
   "devDependencies": {
-    "koa": "^1.2.1",
+    "koa": "^2.2.0",
     "supertest": "^2.0.0",
     "tape": "^4.6.0"
   }
