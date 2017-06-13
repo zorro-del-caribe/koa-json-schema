@@ -5,7 +5,7 @@ const request = require('supertest');
 const http = require('http');
 
 test('validate query parameters', t=> {
-  const app = koa()
+  const app = new koa()
     .use(validator({
       type: 'object',
       properties: {
@@ -27,7 +27,7 @@ test('validate query parameters', t=> {
 
 
 test('validate query parameters', t=> {
-  const app = koa()
+  const app = new koa()
     .use(validator({
       type: 'object',
       properties: {
@@ -37,8 +37,8 @@ test('validate query parameters', t=> {
         }
       }
     }))
-    .use(function * () {
-      this.body = {foo: 'bar'};
+    .use(function (ctx) {
+      ctx.body = {foo: 'bar'};
     });
 
   request(http.createServer(app.callback()))
@@ -52,13 +52,13 @@ test('validate query parameters', t=> {
 });
 
 test('validate query parameters', t=> {
-  const app = koa()
-    .use(function * (next) {
+  const app = new koa()
+    .use(async function (ctx, next) {
       try {
-        yield *next;
+        await next();
       } catch (e) {
-        this.status = e.status;
-        this.body = e.error_description;
+        ctx.status = e.status;
+        ctx.body = e.error_description;
       }
     })
     .use(validator({
@@ -70,7 +70,7 @@ test('validate query parameters', t=> {
         }
       }
     }))
-    .use(function * () {
+    .use(function (ctx) {
       t.fail();
     });
 
