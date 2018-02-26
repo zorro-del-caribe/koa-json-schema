@@ -26,11 +26,11 @@
   },
   "homepage": "https://github.com/zorro-del-caribe/koa-json-schema#readme",
   "dependencies": {
-    "ajv": "^5.1.5"
+    "ajv": "^6.2.0"
   },
   "devDependencies": {
-    "koa": "^2.2.0",
+    "koa": "^2.5.0",
     "supertest": "^3.0.0",
-    "tape": "^4.6.0"
+    "tape": "^4.9.0"
   }
 }
