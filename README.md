@@ -13,15 +13,12 @@
 validate input as
 
 ```Javascript
-
-const input = Object.assign({},ctx.request.query, ctx.request.body, ctx.params);
-
+const input = Object.assign({}, ctx.request.query, ctx.request.body, ctx.params);
 ```
 
 ```Javascript
-
 const koa=require('koa')
-const validator = require('koa-json-schema')
+const {middleware: validator} = require('koa-json-schema')
 
 koa()
     .use(validator(schema, options))
@@ -36,7 +33,6 @@ koa()
 if the input is not valid 422 error is thrown. the validation errors can be found as error.error_description
 
 ```Javascript
-
 koa()
     .use(async function (ctx, next){
         try {
@@ -51,5 +47,4 @@ koa()
     .use(function (ctx){
        // do something with safe input
     });
-
 ```
