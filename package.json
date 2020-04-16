@@ -1,6 +1,6 @@
 {
   "name": "koa-json-schema",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "json schema validator middleware for koajs",
   "main": "src/index",
   "types": "src/index.d.ts",
